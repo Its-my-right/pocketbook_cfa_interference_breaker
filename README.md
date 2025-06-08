@@ -12,8 +12,8 @@ A - Module composition:
     - Defines the remove_moire_on_fb method, which removes image frequencies responsible for the appearance of the rainbow effect (interference with the CFA of Kaleido 3 screens)
     - Modifies the "_updateFull", "_updatePartial", or "_updateFast" methods of the pocketbook framebuffer to check whether the image loaded in the framebuffer is in color or black and white, and to apply the removal of patterns responsible for the rainbow effect to black and white images
     - Note: The module loads the resources needed for moire suppression only once when loading the first black and white image, and reuses these resources for subsequent black and white images. These resources are deleted when koreader is exited or when the e-reader is put to sleep.
-- "color_detect.so" library (sources are provided in the GitHub project)
-- "moire_filter_fftw_eco.so" library (sources are provided in the project)
+- "color_detect.so" library (sources are provided in sources/color_detect/ directory)
+- "moire_filter_fftw_eco.so" library (sources are provided in sources/moire_filter_fftw_eco/ directory)
 - This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes interference.
 - libgomp.so.1 library to enable multithreading in libraries
 
