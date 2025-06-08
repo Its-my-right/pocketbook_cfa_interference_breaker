@@ -2,6 +2,7 @@
 Custom module for koreader on Pocketbook to break CFA "Rainbow Effect" on Kaleido 3
 
 This module allows you to display black and white images without the rainbow effect on an e-reader with a Kaleido 3 screen, using Koreader.
+It applies "on the fly" via Koreader, so the great benefit of this is that you don't have to alter your original files :)
 
 Disclaimer: It was developed and tested exclusively on the Pocketbook Inkpad Color 3 e-reader, but should be easily portable to other e-readers.
 
