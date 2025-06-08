@@ -5,6 +5,8 @@ This module allows you to display black and white images without the rainbow eff
 
 Disclaimer: It was developed and tested exclusively on the Pocketbook Inkpad Color 3 e-reader, but should be easily portable to other e-readers.
 
+
+
 A - Module composition:
 - Lua patch "20-apply_cfa_interference_breaker.lua" (invoked in Koreader via the userpatches module):
     - Loads the two libraries "color_detect.so" and "moire_filter_fftw_eco.so"
@@ -16,6 +18,8 @@ A - Module composition:
 - "moire_filter_fftw_eco.so" library (sources are provided in sources/moire_filter_fftw_eco/ directory)
   - This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes interference.
 - libgomp.so.1 library (from gcc compiler) to enable multithreading in libraries
+
+
 
 B - Usage on Pocketbook Inkpad Color 3:
   - Copy the content of "modules_for_pocketbook_inkpad_color_3" inside applications/koreader/ on your Pocketbook Inkpad Color 3
