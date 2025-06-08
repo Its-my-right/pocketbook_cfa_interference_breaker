@@ -5,8 +5,6 @@ This module allows you to display black and white images without the rainbow eff
 
 Disclaimer: It was developed and tested exclusively on the Pocketbook Inkpad Color 3 e-reader, but should be easily portable to other e-readers.
 
-
-
 A - Module composition:
 - Lua patch "20-apply_cfa_interference_breaker.lua" (invoked in Koreader via the userpatches module):
     - Loads the two libraries "color_detect.so" and "moire_filter_fftw_eco.so"
@@ -19,23 +17,21 @@ A - Module composition:
   - This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes interference.
 - libgomp.so.1 library (from gcc compiler) to enable multithreading in libraries
 
-
-
 B - Usage on Pocketbook Inkpad Color 3:
   - Copy the content of "modules_for_pocketbook_inkpad_color_3" inside applications/koreader/ on your Pocketbook Inkpad Color 3
-  - If necessary, modify the values ​​of the parameters param_radius_min and param_radius_max_diviser in 20-apply_cfa_interference_breaker.lua (increasing "param_radius_min" sharpens the image, and increasing param_radius_max_diviser removes more frequencies from the image, but at too high values, artifacts may appear). (appear)
+  - If necessary, modify the values ​​of the parameters param_radius_min and param_radius_max_diviser in 20-apply_cfa_interference_breaker.lua (increasing "param_radius_min" sharpens the image, and increasing param_radius_max_diviser removes more frequencies from the image, but at too high values, artifacts may appear)
 
 C - Modify the sources for other e-readers and compile
-  - The sources/color_detect/ directory contains the sources as well as the makefile I used to modify/compile the library.
-  - The sources/moire_filter_fftw_eco/ directory contains the sources as well as the makefile I used to modify/compile the library.
-  - To compile "moire_filter_fftw_eco," you will need to have the libfftw3f.a and libfftw3f_omp.a files in the same directory. To do this, you will need to compile FFTW (See https://www.fftw.org/download.html).
-  - I have attached the instructions I used to compile FFTW in the directory as an example.
-  - The sources/20-apply_cfa_interference_breaker.lua patch will likely need to be adapted to the possibly different operation of framebuffers other than Pocketbook.
+  - The sources/color_detect/ directory contains the sources as well as the makefile I used to modify/compile the library
+  - The sources/moire_filter_fftw_eco/ directory contains the sources as well as the makefile I used to modify/compile the library
+  - To compile "moire_filter_fftw_eco," you will need to have the libfftw3f.a and libfftw3f_omp.a files in the same directory. To do this, you will need to compile FFTW first (See https://www.fftw.org/download.html)
+  - I have attached the instructions I used to compile FFTW in the directory as an example
+  - The sources/20-apply_cfa_interference_breaker.lua patch will likely need to be adapted to the possibly different operation of framebuffers other than Pocketbook
 
 
 I Used gcc-arm-8.3-2019.02-x86_64-arm-linux-gnueabi to cross-compile from Windows WSL, because I think Koreader only allows the load of .so compiled with softfp and not hardfp. See https://developer.arm.com/downloads/-/gnu-a/8-3-2019-02
 
-This project should be greatly improved by users with a better understanding of good computer science practices. You can use my work to make any modifications/improvements you deem useful and allow it to be distributed to as many Kaleido 3 screen users as possible :)
+This project should be greatly improved by users with a better understanding of good computer science practices. You can use my work to make any modifications/improvements that seems useful and allow it to be distributed to as many Kaleido 3 screen users as possible :)
 
-A huge thank you to the FFTW team for their library (Matteo Frigo and Steven G. Johnson, “The design and implementation of FFTW3,” Proc. IEEE 93 (2), 216–231 (2005)).
-Thanks also to Blendman974 for his idea of ​​using Fourier transforms to remove the rainbow effect on Kaleido 3.
+A huge thanks to the FFTW team for their library FFTW 3.3.10 (Matteo Frigo and Steven G. Johnson, “The design and implementation of FFTW3,” Proc. IEEE 93 (2), 216–231 (2005)).
+Thanks also to Blendman974 for his idea of ​​using Fourier transforms to remove the rainbow effect on Kaleido 3 !
