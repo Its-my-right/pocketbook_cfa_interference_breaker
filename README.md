@@ -35,5 +35,5 @@ I Used gcc-arm-8.3-2019.02-x86_64-arm-linux-gnueabi to cross-compile from Window
 This project should be greatly improved by users with a better understanding of good computer science practices. You can use my work to make any modifications/improvements that seems useful and allow it to be distributed to as many Kaleido 3 screen users as possible :)
 
 A huge thanks to the FFTW team for their library FFTW 3.3.10 (Matteo Frigo and Steven G. Johnson, “The design and implementation of FFTW3,” Proc. IEEE 93 (2), 216–231 (2005)).
-Of course, Big Up to all the persons maintaining Koreader (https://koreader.rocks/)
+Of course, Big Up to all the persons maintaining Koreader (https://koreader.rocks/).
 Thanks also to Blendman974 for his idea of ​​using Fourier transforms to remove the rainbow effect on Kaleido 3 !
