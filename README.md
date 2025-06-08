@@ -22,11 +22,11 @@ B - Usage on Pocketbook Inkpad Color 3:
   - If necessary, modify the values ​​of the parameters param_radius_min and param_radius_max_diviser in 20-apply_cfa_interference_breaker.lua (increasing "param_radius_min" sharpens the image, and increasing param_radius_max_diviser removes more frequencies from the image, but at too high values, artifacts may appear). (appear)
 
 C - Modify the sources for other e-readers and compile
-  - The "color_detect" directory contains the sources as well as the makefile I used to modify/compile the library.
-  - The "moire_filter_fftw_eco" directory contains the sources as well as the makefile I used to modify/compile the library.
+  - The sources/color_detect/ directory contains the sources as well as the makefile I used to modify/compile the library.
+  - The sources/moire_filter_fftw_eco/ directory contains the sources as well as the makefile I used to modify/compile the library.
   - To compile "moire_filter_fftw_eco," you will need to have the libfftw3f.a and libfftw3f_omp.a files in the same directory. To do this, you will need to compile FFTW (See https://www.fftw.org/download.html).
   - I have attached the instructions I used to compile FFTW in the directory as an example.
-  - The Lua patch will likely need to be adapted to the possibly different operation of framebuffers other than Pocketbook.
+  - The sources/20-apply_cfa_interference_breaker.lua patch will likely need to be adapted to the possibly different operation of framebuffers other than Pocketbook.
 
 
 I Used gcc-arm-8.3-2019.02-x86_64-arm-linux-gnueabi to cross-compile from Windows WSL, because I think Koreader only allows the load of .so compiled with softfp and not hardfp. See https://developer.arm.com/downloads/-/gnu-a/8-3-2019-02
