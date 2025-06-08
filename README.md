@@ -15,7 +15,7 @@ A - Module composition:
     - Note: The module loads the resources needed for moire suppression only once when loading the first black and white image, and reuses these resources for subsequent black and white images. These resources are deleted when koreader is exited or when the e-reader is put to sleep.
 - "color_detect.so" library (sources are provided in sources/color_detect/ directory)
 - "moire_filter_fftw_eco.so" library (sources are provided in sources/moire_filter_fftw_eco/ directory)
-  - This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes interference.
+  - This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes frequencies that interfers with CFA.
 - libgomp.so.1 library (from gcc compiler) to enable multithreading in libraries
 
 B - Usage on Pocketbook Inkpad Color 3:
