@@ -6,16 +6,16 @@ This module allows you to display black and white images without the rainbow eff
 Disclaimer: It was developed and tested exclusively on the Pocketbook Inkpad Color 3 e-reader, but should be easily portable to other e-readers.
 
 A - Module composition:
-  1 - Lua patch "20-apply_cfa_interference_breaker.lua" (invoked in Koreader via the userpatches module):
+- Lua patch "20-apply_cfa_interference_breaker.lua" (invoked in Koreader via the userpatches module):
     - Loads the two libraries "color_detect.so" and "moire_filter_fftw_eco.so"
     - Defines the framebuffer_has_color method, which uses color_detect.so to detect whether the image loaded in the framebuffer is in color or black and white
     - Defines the remove_moire_on_fb method, which removes image frequencies responsible for the appearance of the rainbow effect (interference with the CFA of Kaleido 3 screens)
     - Modifies the "_updateFull", "_updatePartial", or "_updateFast" methods of the pocketbook framebuffer to check whether the image loaded in the framebuffer is in color or black and white, and to apply the removal of patterns responsible for the rainbow effect to black and white images
     - Note: The module loads the resources needed for moire suppression only once when loading the first black and white image, and reuses these resources for subsequent black and white images. These resources are deleted when koreader is exited or when the e-reader is put to sleep.
-  2 - "color_detect.so" library (sources are provided in the GitHub project)
-  3 - "moire_filter_fftw_eco.so" library (sources are provided in the project)
-    - This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes interference.
-  4 - libgomp.so.1 library to enable multithreading in libraries
+- "color_detect.so" library (sources are provided in the GitHub project)
+- "moire_filter_fftw_eco.so" library (sources are provided in the project)
+- This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes interference.
+- libgomp.so.1 library to enable multithreading in libraries
 
 B - Usage on Pocketbook Inkpad Color 3:
   - Copy the content of "modules_for_pocketbook_inkpad_color_3" inside applications/koreader/ on your Pocketbook Inkpad Color 3
