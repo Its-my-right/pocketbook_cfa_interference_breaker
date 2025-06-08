@@ -18,15 +18,14 @@ A - Module composition:
   4 - libgomp.so.1 library to enable multithreading in libraries
 
 B - Usage on Pocketbook Inkpad Color 3:
-  - Place the files "color_detect.so", "moire_filter_fftw_eco.so", and "libgomp.so.1" in applications/koreader/custom_libs
-  - Place the file "20-apply_cfa_interference_breaker.lua" in applications/koreader/patches
+  - Copy the content of "modules_for_pocketbook_inkpad_color_3" inside applications/koreader/ on your Pocketbook Inkpad Color 3
   - If necessary, modify the values ​​of the parameters param_radius_min and param_radius_max_diviser in 20-apply_cfa_interference_breaker.lua (increasing "param_radius_min" sharpens the image, and increasing param_radius_max_diviser removes more frequencies from the image, but at too high values, artifacts may appear). (appear)
 
 C - Modify the sources for other e-readers and compile
   - The "color_detect" directory contains the sources as well as the makefile I used to modify/compile the library.
   - The "moire_filter_fftw_eco" directory contains the sources as well as the makefile I used to modify/compile the library.
   - To compile "moire_filter_fftw_eco," you will need to have the libfftw3f.a and libfftw3f_omp.a files in the same directory. To do this, you will need to compile FFTW (See https://www.fftw.org/download.html).
-  - I have attached the makefile I used to compile FFTW in the directory as an example.
+  - I have attached the instructions I used to compile FFTW in the directory as an example.
   - The Lua patch will likely need to be adapted to the possibly different operation of framebuffers other than Pocketbook.
 
 
