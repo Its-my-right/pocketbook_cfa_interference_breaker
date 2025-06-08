@@ -15,7 +15,7 @@ A - Module composition:
 - "color_detect.so" library (sources are provided in sources/color_detect/ directory)
 - "moire_filter_fftw_eco.so" library (sources are provided in sources/moire_filter_fftw_eco/ directory)
   - This library uses FFTW to apply an FFT and then an IFFT to each image. Between the two, a function removes interference.
-  - libgomp.so.1 library to enable multithreading in libraries
+- libgomp.so.1 library (from gcc compiler) to enable multithreading in libraries
 
 B - Usage on Pocketbook Inkpad Color 3:
   - Copy the content of "modules_for_pocketbook_inkpad_color_3" inside applications/koreader/ on your Pocketbook Inkpad Color 3
