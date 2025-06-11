@@ -32,6 +32,8 @@ C - Modify the sources for other e-readers and compile
 
 I Used gcc-arm-8.3-2019.02-x86_64-arm-linux-gnueabi to cross-compile from Windows WSL, because I think Koreader only allows the load of .so compiled with softfp and not hardfp. See https://developer.arm.com/downloads/-/gnu-a/8-3-2019-02
 
+Here is a quick Before/After of what the result can look like: https://youtube.com/shorts/8rw_-P6NSEk?feature=share
+
 This project should be greatly improved by users with a better understanding of good computer science practices. You can use my work to make any modifications/improvements that seems useful and allow it to be distributed to as many Kaleido 3 screen users as possible :)
 
 A huge thanks to the FFTW team for their library FFTW 3.3.10 (Matteo Frigo and Steven G. Johnson, “The design and implementation of FFTW3,” Proc. IEEE 93 (2), 216–231 (2005)).
